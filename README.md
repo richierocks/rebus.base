@@ -74,7 +74,7 @@ Zero-length assertions match characters then give up the match.  `lookahead` and
 
 ### Backreferences
 
-TODO
+`REF1` to `REF9` contain references to captured groups of the form `\\i`, for reuse with replacement functions and R's PRCE and PErl engines.  `ICU_REF1` to `ICU_REF9` contain references of the form `$i`, for use with the ICU engine.
 
 ### Mode modifiers
 
