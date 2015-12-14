@@ -24,11 +24,10 @@ Operator equivalent of \code{regex}.
 \note{
 \code{\%c\%} was the original operator for this ('c' for
 'concatenate').  This is hard work to type on a QWERTY keyboard
-though, so \code{\%R\%} is now preferred.
+though, so it has been replaced with \code{\%R\%}.
 }
 \examples{
 letters \%R\% LETTERS
-letters \%c\% LETTERS
 }
 \seealso{
 \code{\link{regex}}, \code{\link[base]{paste}}

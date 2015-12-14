@@ -17,6 +17,12 @@ Makes a regex exact: that is, it must contain the whole string, not just part
 of it.
 }
 \examples{
-exactly("#" \%R\% hex_digit(6))
+# A hex color
+(rx <- "#" \%R\% hex_digit(6))
+(rx_exact <- exactly(rx))
+
+stringi::stri_detect_regex("ginger is #B06500", rx)
+stringi::stri_detect_regex("ginger is #B06500", rx_exact)
+stringi::stri_detect_regex("#B06500", rx_exact)
 }
 

@@ -16,6 +16,11 @@ A character vector representing part or all of a regular expression.
 Treats its contents as literal characters.
 }
 \examples{
-literal(digit(1, 3))
+(rx <- digit(1, 3))
+(rx_literal <- literal(rx))
+
+stringi::stri_detect_regex("123", rx)
+stringi::stri_detect_regex("123", rx_literal)
+stringi::stri_detect_regex("[[:digit:]]{1,3}", rx_literal)
 }
 
