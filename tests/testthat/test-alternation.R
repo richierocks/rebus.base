@@ -1,3 +1,5 @@
+context("or, not enough args")
+
 test_that(
   "or with zero args in ... gives a warning",
   {
@@ -34,6 +36,7 @@ test_that(
   }
 )
 
+context("or, capture arg")
 
 test_that(
   "or with >= two args separates with |, groups",
@@ -62,6 +65,8 @@ test_that(
   }
 )
 
+context("or1")
+
 test_that(
   "or1 with capture = TRUE captures",
   {
@@ -79,6 +84,8 @@ test_that(
     expect_equal(actual, expected)
   }
 )
+
+context("%|%")
 
 test_that(
   "%|% separates with |, doesn't group",
