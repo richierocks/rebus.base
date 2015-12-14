@@ -1,10 +1,10 @@
-#' Class Groups
+#' Character classes
 #'
-#' Match groups of classes
+#' Match character classes.
 #' @param lo A non-negative integer. Minimum number of repeats, when grouped.
 #' @param hi positive integer. Maximum number of repeats, when grouped.
-#' @param char_class \code{TRUE} or \code{FALSE}. Should the values be wrapped
-#' into a character class?
+#' @param char_class A logical value. Should \code{x} be wrapped in a character
+#' class?  If \code{NA}, the function guesses whether that's a good idea.
 #' @return A character vector representing part or all of a regular expression.
 #' @note R has many built-in locale-dependent character classes, like
 #' \code{[:alnum:]} (representing lower or upper case letters or numbers).
@@ -17,7 +17,7 @@
 #' testing.
 #' @references \url{http://www.regular-expressions.info/shorthand.html} and
 #' \url{http://www.rexegg.com/regex-quickstart.html#posix}
-#' @seealso \code{\link[base]{regex}}, \code{\link{Unicode}}
+#' @seealso \code{\link[base]{regex}}, \code{\link[rebus.unicode]{Unicode}}
 #' @examples
 #' # R character classes
 #' alnum()
@@ -49,13 +49,19 @@
 #' ascii_lower()
 #' ascii_upper()
 #'
-#' #Grouping and repetition
-#' digit(char_class = FALSE)
+#' # Don't provide a class wrapper
+#' digit(char_class = FALSE) # same as DIGIT
+#'
+#' # Match repeated values
 #' digit(3)
 #' digit(3, 5)
 #' digit(0)
 #' digit(1)
 #' digit(0, 1)
+#'
+#' # Usage
+#' (rx <- digit(3))
+#' stringi::stri_detect_regex(c("123", "one23"), rx)
 #' @include constants.R
 #' @include grouping-and-repetition.R
 #' @name ClassGroups

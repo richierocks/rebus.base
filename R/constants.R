@@ -1,5 +1,5 @@
 #' Special characters
-#' 
+#'
 #' Constants to match special characters
 #' @references \url{http://www.regular-expressions.info/characters.html}
 #' @seealso \code{\link{ALPHA}}, \code{\link{START}}, \code{\link{BOUNDARY}}
@@ -16,7 +16,7 @@
 #' CLOSE_PAREN
 #' OPEN_BRACKET
 #' OPEN_BRACE
-#' 
+#'
 #' x <- "\\^$."
 #' rx <- BACKSLASH %R% CARET %R% DOLLAR %R% DOT
 #' grepl(rx, x)
@@ -74,18 +74,18 @@ OPEN_BRACKET <- regex("\\[")
 OPEN_BRACE <- regex("\\{")
 
 #' The start or end of a string.
-#' 
+#'
 #' Match the start or end of a string.
 #' @return A character vector representing part or all of a regular expression.
 #' @references \url{http://www.regular-expressions.info/anchors.html} and
 #' \url{http://www.rexegg.com/regex-anchors.html}
-#' @note Caret and dollar are used as start/end delimiters, since \code{\\A} and 
+#' @note Caret and dollar are used as start/end delimiters, since \code{\\A} and
 #' \code{\\Z} are not supported by R's internal PRCE engine or \code{stringi}'s
 #' ICU engine.
 #' @examples
 #' START
 #' END
-#' 
+#'
 #' x <- c("catfish", "tomcat")
 #' rx <- START %R% "cat"
 #' rx2 <- "cat" %R% END
@@ -103,10 +103,11 @@ START <- regex("^")
 END <- regex("$")
 
 #' Class Constants
-#' 
+#'
 #' Match a class of values.
 #' @seealso \code{\link{alnum}}, \code{\link{BACKSLASH}}, \code{\link{START}}, \code{\link{BOUNDARY}}
 #' @examples
+#' # R character classes
 #' ALNUM
 #' ALPHA
 #' BLANK
@@ -119,24 +120,32 @@ END <- regex("$")
 #' SPACE
 #' UPPER
 #' HEX_DIGIT
+#'
+#' # Generic classes
 #' ANY_CHAR
 #' DGT
 #' WRD
 #' SPC
+#'
+#' # Generic negated classes
 #' NOT_DGT
 #' NOT_WRD
 #' NOT_SPC
+#'
+#' # Non-locale-specific classes
 #' ASCII_DIGIT
 #' ASCII_LOWER
 #' ASCII_UPPER
 #' ASCII_ALPHA
 #' ASCII_ALNUM
-#' ROMAN
+#'
+#' # An oxymoron
 #' UNMATCHABLE
-#' 
+#'
+#' # Usage
 #' x <- c("a1 A", "a1 a")
 #' rx <- LOWER %R% DIGIT %R% SPACE %R% UPPER
-#' grepl(rx, x)
+#' stringi::stri_detect_regex(x, rx)
 #' @name CharacterClasses
 NULL
 
@@ -229,7 +238,7 @@ ASCII_LOWER <- regex("a-z")
 ASCII_UPPER <- regex("A-Z")
 
 #' Word boundaries
-#' 
+#'
 #' Match a word boundary.
 #' @references \url{http://www.regular-expressions.info/wordboundaries.html} and
 #' \url{http://www.rexegg.com/regex-boundaries.html}
@@ -237,7 +246,7 @@ ASCII_UPPER <- regex("A-Z")
 #' @examples
 #' BOUNDARY
 #' NOT_BOUNDARY
-#' 
+#'
 #' x <- c("catfish", "tomcat")
 #' rx <- BOUNDARY %R% "cat"
 #' grepl(rx, x)

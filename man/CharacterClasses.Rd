@@ -23,7 +23,6 @@
 \alias{NOT_WRD}
 \alias{PRINT}
 \alias{PUNCT}
-\alias{ROMAN}
 \alias{SPACE}
 \alias{SPC}
 \alias{UNMATCHABLE}
@@ -80,14 +79,13 @@ ASCII_ALPHA
 
 ASCII_ALNUM
 
-ROMAN
-
 UNMATCHABLE
 }
 \description{
 Match a class of values.
 }
 \examples{
+# R character classes
 ALNUM
 ALPHA
 BLANK
@@ -100,24 +98,32 @@ PUNCT
 SPACE
 UPPER
 HEX_DIGIT
+
+# Generic classes
 ANY_CHAR
 DGT
 WRD
 SPC
+
+# Generic negated classes
 NOT_DGT
 NOT_WRD
 NOT_SPC
+
+# Non-locale-specific classes
 ASCII_DIGIT
 ASCII_LOWER
 ASCII_UPPER
 ASCII_ALPHA
 ASCII_ALNUM
-ROMAN
+
+# An oxymoron
 UNMATCHABLE
 
+# Usage
 x <- c("a1 A", "a1 a")
 rx <- LOWER \%R\% DIGIT \%R\% SPACE \%R\% UPPER
-grepl(rx, x)
+stringi::stri_detect_regex(x, rx)
 }
 \seealso{
 \code{\link{alnum}}, \code{\link{BACKSLASH}}, \code{\link{START}}, \code{\link{BOUNDARY}}
