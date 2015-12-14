@@ -13,6 +13,8 @@ Depends:
     R (>= 3.3.0)
 Imports:
     stats
+Suggests:
+    stringi
 License: Unlimited
 LazyData: true
 RoxygenNote: 5.0.1
