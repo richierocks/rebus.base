@@ -72,175 +72,175 @@ NULL
 #' @export
 alnum <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(ALNUM, lo, hi, char_class)
+  repeated(ALNUM, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 alpha <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(ALPHA, lo, hi, char_class)
+  repeated(ALPHA, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 blank <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(BLANK, lo, hi, char_class)
+  repeated(BLANK, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 cntrl <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(CNTRL, lo, hi, char_class)
+  repeated(CNTRL, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 digit <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(DIGIT, lo, hi, char_class)
+  repeated(DIGIT, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 graph <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(GRAPH, lo, hi, char_class)
+  repeated(GRAPH, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 lower <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(LOWER, lo, hi, char_class)
+  repeated(LOWER, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 printable <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(PRINT, lo, hi, char_class)
+  repeated(PRINT, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 punct <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(PUNCT, lo, hi, char_class)
+  repeated(PUNCT, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 space <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(SPACE, lo, hi, char_class)
+  repeated(SPACE, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 upper <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(UPPER, lo, hi, char_class)
+  repeated(UPPER, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 hex_digit <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(HEX_DIGIT, lo, hi, char_class)
+  repeated(HEX_DIGIT, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 any_char <- function(lo, hi)
 {
-  repeat_in_class(ANY_CHAR, lo, hi, char_class = FALSE)
+  repeated(ANY_CHAR, lo, hi, char_class = FALSE)
 }
 
 #' @rdname ClassGroups
 #' @export
 dgt <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(DGT, lo, hi, char_class)
+  repeated(DGT, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 wrd <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(WRD, lo, hi, char_class)
+  repeated(WRD, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 spc <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(SPC, lo, hi, char_class)
+  repeated(SPC, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 not_dgt <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(NOT_DGT, lo, hi, char_class)
+  repeated(NOT_DGT, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 not_wrd <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(NOT_WRD, lo, hi, char_class)
+  repeated(NOT_WRD, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 not_spc <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(NOT_SPC, lo, hi, char_class)
+  repeated(NOT_SPC, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 ascii_digit <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(ASCII_DIGIT, lo, hi, char_class)
+  repeated(ASCII_DIGIT, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 ascii_lower <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(ASCII_LOWER, lo, hi, char_class)
+  repeated(ASCII_LOWER, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 ascii_upper <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(ASCII_UPPER, lo, hi, char_class)
+  repeated(ASCII_UPPER, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 ascii_alpha <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(ASCII_LOWER %R% ASCII_UPPER, lo, hi, char_class)
+  repeated(ASCII_LOWER %R% ASCII_UPPER, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 ascii_alnum <- function(lo, hi, char_class = TRUE)
 {
-  repeat_in_class(ASCII_ALPHA %R% ASCII_DIGIT, lo, hi, char_class)
+  repeated(ASCII_ALPHA %R% ASCII_DIGIT, lo, hi, char_class = char_class)
 }
 
 #' @rdname ClassGroups
 #' @export
 roman <- function(lo, hi)
 {
-  repeat_in_class(ROMAN, lo, hi, FALSE)
+  repeated(ROMAN, lo, hi, FALSE)
 }
 
 #' @rdname ClassGroups

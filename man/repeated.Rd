@@ -8,15 +8,15 @@
 \alias{zero_or_more}
 \title{Repeat values}
 \usage{
-repeated(x, lo, hi, lazy = FALSE)
+repeated(x, lo, hi, lazy = FALSE, char_class = NA)
 
-optional(x)
+optional(x, char_class = NA)
 
 lazy(x)
 
-zero_or_more(x)
+zero_or_more(x, char_class = NA)
 
-one_or_more(x)
+one_or_more(x, char_class = NA)
 }
 \arguments{
 \item{x}{A character vector.}
@@ -27,6 +27,9 @@ one_or_more(x)
 
 \item{lazy}{A logical value.  Should repetition be matched lazily or
 greedily?}
+
+\item{char_class}{A logical value. Should \code{x} be wrapped in a character
+class?  If \code{NA}, the function guesses whether that's a good idea.}
 }
 \value{
 A character vector representing part or all of a regular expression.
@@ -35,20 +38,24 @@ A character vector representing part or all of a regular expression.
 Match repeated values.
 }
 \examples{
-x <- graph()
-optional(x)
-zero_or_more(x)
-repeated(x, 0, Inf) # same
-one_or_more(x)
-repeated(x, 1, Inf) # same
-repeated(x, 0)
-repeated(x, 1)
-repeated(x, 3)
-repeated(x, 3, 5)
+# Can match constants or class values
+repeated(GRAPH, 2, 5)
+repeated(graph(), 2, 5)   # same
+
+# Short cuts for special cases
+optional(blank())         # same as repeated(blank(), 0, 1)
+zero_or_more(hex_digit()) # same as repeated(hex_digit(), 0, Inf)
+one_or_more(printable())  # same as repeated(printable(), 1, Inf)
+
+# 'Lazy' matching (match smallest no. of chars)
+repeated(cntrl(), 2, 5, lazy = TRUE)
+lazy(one_or_more(cntrl()))
+
+# Overriding character class wrapping
+repeated(ANY_CHAR, 2, 5, char_class = FALSE)
 }
 \references{
 \url{http://www.regular-expressions.info/repeat.html} and
-\url{http://www.rexegg.com/regex-quantifiers.html} and
-\url{http://www.rexegg.com/regex-anchors.html}
+\url{http://www.rexegg.com/regex-quantifiers.html}
 }
 
