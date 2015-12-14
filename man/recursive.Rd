@@ -16,21 +16,22 @@ A character vector representing part or all of a regular expression.
 Makes the regular expression (or part of it) recursive.
 }
 \note{
-Recursion is not supported by R's internal PRCE engine or 
+Recursion is not supported by R's internal PRCE engine or
 \code{stringi}'s ICU engine.
 }
 \examples{
 recursive("a")
 
-# Recursion isn't supported by R's internal PRCE engine
+# Recursion isn't supported by R's PRCE engine or
+# stringi/stringr's ICU engine
 x <- c("ab222z", "ababz", "ab", "abab")
 rx <- "ab(?R)?z"
 grepl(rx, x, perl = TRUE)
 try(grepl(rx, x))
-try(stri_detect_regex(x, rx))
+try(stringi::stri_detect_regex(x, rx))
 }
 \references{
-\url{http://www.regular-expressions.info/recurse.html} and 
+\url{http://www.regular-expressions.info/recurse.html} and
 \url{http://www.rexegg.com/regex-recursion.html}
 }
 

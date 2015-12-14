@@ -19,9 +19,10 @@ Match a word boundary.
 BOUNDARY
 NOT_BOUNDARY
 
-x <- c("catfish", "tomcat")
+# Usage
+x <- c("the catfish", "the tomcat")
 rx <- BOUNDARY \%R\% "cat"
-grepl(rx, x)
+stringi::stri_detect_regex(x, rx)
 }
 \references{
 \url{http://www.regular-expressions.info/wordboundaries.html} and

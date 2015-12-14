@@ -70,7 +70,11 @@ The `%|%` operator does the same for the special case of two inputs, without gro
 
 ### Lookaround
 
-Zero-length assertions match characters then give up the match.  `lookahead` and `negative_lookahead` match forwards, and `lookbehind` and `negative_lookbehind` match backwards.  Note that the last two aren't supported by R's POSIX engine, only it's Perl engine and *stringi*/*stringr*'s ICU engine.  For example, `q %R% lookahead("u")` matches "q" followed by "u", but only includes "q" in the match.
+Zero-length assertions match characters then give up the match.  `lookahead` and `negative_lookahead` match forwards, and `lookbehind` and `negative_lookbehind` match backwards.  Note that the last two aren't supported by R's PCRE engine, only it's Perl engine and *stringi*/*stringr*'s ICU engine.  For example, `q %R% lookahead("u")` matches "q" followed by "u", but only includes "q" in the match.
+
+### Backreferences
+
+TODO
 
 ### Mode modifiers
 

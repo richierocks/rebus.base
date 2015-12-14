@@ -7,6 +7,10 @@
 #' @examples
 #' char_class(LOWER, "._")
 #' negated_char_class(LOWER, "._")
+#'
+#' # Usage
+#' (rx_odd <- char_class(1, 3, 5, 7, 9))
+#' stringi::stri_detect_regex((1:10) ^ 2, rx_odd)
 #' @export
 char_class <- function(...)
 {

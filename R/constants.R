@@ -17,10 +17,12 @@
 #' OPEN_BRACKET
 #' OPEN_BRACE
 #'
+#' # Usage
 #' x <- "\\^$."
 #' rx <- BACKSLASH %R% CARET %R% DOLLAR %R% DOT
-#' grepl(rx, x)
-#' grepl(x, x) # no escapes - these chars have special meaning inside regex
+#' stringi::stri_detect_regex(x, rx)
+#' # No escapes - these chars have special meaning inside regex
+#' stringi::stri_detect_regex(x, x)
 #' @name SpecialCharacters
 #' @include regex-methods.R
 NULL
@@ -82,15 +84,17 @@ OPEN_BRACE <- regex("\\{")
 #' @note Caret and dollar are used as start/end delimiters, since \code{\\A} and
 #' \code{\\Z} are not supported by R's internal PRCE engine or \code{stringi}'s
 #' ICU engine.
+#' @seealso \code{\link{exactly}} and \code{\link{modify_mode}}
 #' @examples
 #' START
 #' END
 #'
+#' # Usage
 #' x <- c("catfish", "tomcat")
-#' rx <- START %R% "cat"
-#' rx2 <- "cat" %R% END
-#' grepl(rx, x)
-#' grepl(rx2, x)
+#' (rx_start <- START %R% "cat")
+#' (rx_end <- "cat" %R% END)
+#' stringi::stri_detect_regex(x, rx_start)
+#' stringi::stri_detect_regex(x, rx_end)
 #' @name Anchors
 NULL
 
@@ -247,9 +251,10 @@ ASCII_UPPER <- regex("A-Z")
 #' BOUNDARY
 #' NOT_BOUNDARY
 #'
-#' x <- c("catfish", "tomcat")
+#' # Usage
+#' x <- c("the catfish", "the tomcat")
 #' rx <- BOUNDARY %R% "cat"
-#' grepl(rx, x)
+#' stringi::stri_detect_regex(x, rx)
 #' @name WordBoundaries
 NULL
 

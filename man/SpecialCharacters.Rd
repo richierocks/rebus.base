@@ -59,10 +59,12 @@ CLOSE_PAREN
 OPEN_BRACKET
 OPEN_BRACE
 
+# Usage
 x <- "\\\\^$."
 rx <- BACKSLASH \%R\% CARET \%R\% DOLLAR \%R\% DOT
-grepl(rx, x)
-grepl(x, x) # no escapes - these chars have special meaning inside regex
+stringi::stri_detect_regex(x, rx)
+# No escapes - these chars have special meaning inside regex
+stringi::stri_detect_regex(x, x)
 }
 \references{
 \url{http://www.regular-expressions.info/characters.html}

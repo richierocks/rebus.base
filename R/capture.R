@@ -4,10 +4,20 @@
 #' @param x A character vector.
 #' @return A character vector representing part or all of a regular expression.
 #' @references \url{http://www.regular-expressions.info/brackets.html}
+#' @seealso \code{\link{or}} for more examples
 #' @examples
 #' x <- "foo"
 #' capture(x)
 #' group(x)
+#'
+#' # Usage
+#' # capture is good with match functions
+#' (rx_price <- capture(DOLLAR %R% digit(1, Inf) %R% DOT %R% digit(2)))
+#' (rx_quantity <- capture(digit(1, Inf)))
+#' (rx_all <- rx_price %R% " for " %R% rx_quantity)
+#' stringi::stri_match_first_regex("The price was $123.99 for 12.", rx_all)
+#'
+#' # group is mostly used with alternation.  See ?or.
 #' @export
 capture <- function(x)
 {

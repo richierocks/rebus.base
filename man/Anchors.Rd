@@ -19,7 +19,7 @@ A character vector representing part or all of a regular expression.
 Match the start or end of a string.
 }
 \note{
-Caret and dollar are used as start/end delimiters, since \code{\\A} and 
+Caret and dollar are used as start/end delimiters, since \code{\\A} and
 \code{\\Z} are not supported by R's internal PRCE engine or \code{stringi}'s
 ICU engine.
 }
@@ -27,15 +27,19 @@ ICU engine.
 START
 END
 
+# Usage
 x <- c("catfish", "tomcat")
-rx <- START \%R\% "cat"
-rx2 <- "cat" \%R\% END
-grepl(rx, x)
-grepl(rx2, x)
+(rx_start <- START \%R\% "cat")
+(rx_end <- "cat" \%R\% END)
+stringi::stri_detect_regex(x, rx_start)
+stringi::stri_detect_regex(x, rx_end)
 }
 \references{
 \url{http://www.regular-expressions.info/anchors.html} and
 \url{http://www.rexegg.com/regex-anchors.html}
+}
+\seealso{
+\code{\link{exactly}} and \code{\link{modify_mode}}
 }
 \keyword{datasets}
 

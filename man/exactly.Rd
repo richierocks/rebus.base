@@ -21,6 +21,7 @@ of it.
 (rx <- "#" \%R\% hex_digit(6))
 (rx_exact <- exactly(rx))
 
+# Usage
 stringi::stri_detect_regex("ginger is #B06500", rx)
 stringi::stri_detect_regex("ginger is #B06500", rx_exact)
 stringi::stri_detect_regex("#B06500", rx_exact)

@@ -24,6 +24,10 @@ Match a range or char_class of characters.
 \examples{
 char_class(LOWER, "._")
 negated_char_class(LOWER, "._")
+
+# Usage
+(rx_odd <- char_class(1, 3, 5, 7, 9))
+stringi::stri_detect_regex((1:10) ^ 2, rx_odd)
 }
 \references{
 \url{http://www.regular-expressions.info/charclass.html}

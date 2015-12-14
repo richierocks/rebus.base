@@ -145,6 +145,9 @@ digit(0)
 digit(1)
 digit(0, 1)
 
+# Ranges of characters
+char_range(0, 7) # octal number
+
 # Usage
 (rx <- digit(3))
 stringi::stri_detect_regex(c("123", "one23"), rx)

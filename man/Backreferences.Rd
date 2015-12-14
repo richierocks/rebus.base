@@ -3,6 +3,15 @@
 \docType{data}
 \name{Backreferences}
 \alias{Backreferences}
+\alias{ICU_REF1}
+\alias{ICU_REF2}
+\alias{ICU_REF3}
+\alias{ICU_REF4}
+\alias{ICU_REF5}
+\alias{ICU_REF6}
+\alias{ICU_REF7}
+\alias{ICU_REF8}
+\alias{ICU_REF9}
 \alias{REF1}
 \alias{REF2}
 \alias{REF3}
@@ -32,17 +41,44 @@ REF7
 REF8
 
 REF9
+
+ICU_REF1
+
+ICU_REF2
+
+ICU_REF3
+
+ICU_REF4
+
+ICU_REF5
+
+ICU_REF6
+
+ICU_REF7
+
+ICU_REF8
+
+ICU_REF9
 }
 \description{
 Backreferences for replacement operations.
 }
 \examples{
+# For R's PCRE and Perl engines
 REF1
 REF2
 # and so on, up to
 REF9
 
+# For stringi/stringr's ICU engine
+ICU_REF1
+ICU_REF2
+# and so on, up to
+ICU_REF9
+
+# Usage
 sub("a(b)c(d)", REF1 \%R\% REF2, "abcd")
+stringi::stri_replace_first_regex("abcd", "a(b)c(d)", ICU_REF1 \%R\% ICU_REF2)
 }
 \references{
 \url{http://www.regular-expressions.info/backref.html} and
