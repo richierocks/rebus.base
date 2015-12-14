@@ -1,6 +1,6 @@
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 
-# rebus: Regular Expression Builder, Um, Something (Base Functionality)
+# rebus.base: Regular Expression Builder, Um, Something (Base Functionality)
 
 This package contains the core functionality for the [*rebus*](https://github.com/richierocks/rebus) package.  It is primarily intended for other R package developers.  For interactive use, try *rebus* instead.
 
@@ -29,7 +29,7 @@ Then you can install the *rebus.base* package using
 
 ```{r}
 library(devtools)
-install_bitbucket("richierocks/rebus.base")
+install_github("richierocks/rebus.base")
 ```
 
 ## Package contents
