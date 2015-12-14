@@ -56,13 +56,6 @@
 #' digit(0)
 #' digit(1)
 #' digit(0, 1)
-#'
-#' # Roman numerals
-#' roman()
-#'
-#' x <- c("MMMDCCCXLVIII", "MMMCMDCCCXLVIIV")
-#' rx <- exactly(roman())
-#' grepl(rx, x)
 #' @include constants.R
 #' @include grouping-and-repetition.R
 #' @name ClassGroups
@@ -234,13 +227,6 @@ ascii_alpha <- function(lo, hi, char_class = TRUE)
 ascii_alnum <- function(lo, hi, char_class = TRUE)
 {
   repeated(ASCII_ALPHA %R% ASCII_DIGIT, lo, hi, char_class = char_class)
-}
-
-#' @rdname ClassGroups
-#' @export
-roman <- function(lo, hi)
-{
-  repeated(ROMAN, lo, hi, FALSE)
 }
 
 #' @rdname ClassGroups
