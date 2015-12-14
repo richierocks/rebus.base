@@ -43,7 +43,7 @@
 #' @export
 or <- function(..., capture = FALSE)
 {
-  if(nargs() < 2)
+  if(length(list(...)) < 2)
   {
     warning(
       "or is intended to be called with at least 2 arguments. ",
