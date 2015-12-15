@@ -49,6 +49,6 @@ engroup <- function(x, capture)
     as.character(capture),
     "TRUE"  = capture(x),
     "FALSE" = group(x),
-    regex(x)
+    as.regex(x)
   )
 }

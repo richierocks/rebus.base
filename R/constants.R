@@ -29,51 +29,51 @@ NULL
 
 #' @rdname SpecialCharacters
 #' @export
-BACKSLASH <- regex("\\\\")
+BACKSLASH <- as.regex("\\\\")
 
 #' @rdname SpecialCharacters
 #' @export
-CARET <- regex("\\^")
+CARET <- as.regex("\\^")
 
 #' @rdname SpecialCharacters
 #' @export
-DOLLAR <- regex("\\$")
+DOLLAR <- as.regex("\\$")
 
 #' @rdname SpecialCharacters
 #' @export
-DOT <- regex("\\.")
+DOT <- as.regex("\\.")
 
 #' @rdname SpecialCharacters
 #' @export
-PIPE <- regex("\\|")
+PIPE <- as.regex("\\|")
 
 #' @rdname SpecialCharacters
 #' @export
-QUESTION <- regex("\\?")
+QUESTION <- as.regex("\\?")
 
 #' @rdname SpecialCharacters
 #' @export
-STAR <- regex("\\*")
+STAR <- as.regex("\\*")
 
 #' @rdname SpecialCharacters
 #' @export
-PLUS <- regex("\\+")
+PLUS <- as.regex("\\+")
 
 #' @rdname SpecialCharacters
 #' @export
-OPEN_PAREN <- regex("\\(")
+OPEN_PAREN <- as.regex("\\(")
 
 #' @rdname SpecialCharacters
 #' @export
-CLOSE_PAREN <- regex("\\)")
+CLOSE_PAREN <- as.regex("\\)")
 
 #' @rdname SpecialCharacters
 #' @export
-OPEN_BRACKET <- regex("\\[")
+OPEN_BRACKET <- as.regex("\\[")
 
 #' @rdname SpecialCharacters
 #' @export
-OPEN_BRACE <- regex("\\{")
+OPEN_BRACE <- as.regex("\\{")
 
 #' The start or end of a string.
 #'
@@ -100,11 +100,11 @@ NULL
 
 #' @rdname Anchors
 #' @export
-START <- regex("^")
+START <- as.regex("^")
 
 #' @rdname Anchors
 #' @export
-END <- regex("$")
+END <- as.regex("$")
 
 #' Class Constants
 #'
@@ -155,91 +155,91 @@ NULL
 
 #' @rdname CharacterClasses
 #' @export
-ALPHA <- regex("[:alpha:]")
+ALPHA <- as.regex("[:alpha:]")
 
 #' @rdname CharacterClasses
 #' @export
-ALNUM <- regex("[:alnum:]")
+ALNUM <- as.regex("[:alnum:]")
 
 #' @rdname CharacterClasses
 #' @export
-BLANK <- regex("[:blank:]")
+BLANK <- as.regex("[:blank:]")
 
 #' @rdname CharacterClasses
 #' @export
-CNTRL <- regex("[:cntrl:]")
+CNTRL <- as.regex("[:cntrl:]")
 
 #' @rdname CharacterClasses
 #' @export
-DIGIT <- regex("[:digit:]")
+DIGIT <- as.regex("[:digit:]")
 
 #' @rdname CharacterClasses
 #' @export
-GRAPH <- regex("[:graph:]")
+GRAPH <- as.regex("[:graph:]")
 
 #' @rdname CharacterClasses
 #' @export
-LOWER <- regex("[:lower:]")
+LOWER <- as.regex("[:lower:]")
 
 #' @rdname CharacterClasses
 #' @export
-PRINT <- regex("[:print:]")
+PRINT <- as.regex("[:print:]")
 
 #' @rdname CharacterClasses
 #' @export
-PUNCT <- regex("[:punct:]")
+PUNCT <- as.regex("[:punct:]")
 
 #' @rdname CharacterClasses
 #' @export
-SPACE <- regex("[:space:]")
+SPACE <- as.regex("[:space:]")
 
 #' @rdname CharacterClasses
 #' @export
-UPPER <- regex("[:upper:]")
+UPPER <- as.regex("[:upper:]")
 
 #' @rdname CharacterClasses
 #' @export
-HEX_DIGIT <- regex("[:xdigit:]")
+HEX_DIGIT <- as.regex("[:xdigit:]")
 
 #' @rdname CharacterClasses
 #' @export
-ANY_CHAR <- regex(".")
+ANY_CHAR <- as.regex(".")
 
 #' @rdname CharacterClasses
 #' @export
-DGT <- regex("\\d")
+DGT <- as.regex("\\d")
 
 #' @rdname CharacterClasses
 #' @export
-WRD <- regex("\\w")
+WRD <- as.regex("\\w")
 
 #' @rdname CharacterClasses
 #' @export
-SPC <- regex("\\s")
+SPC <- as.regex("\\s")
 
 #' @rdname CharacterClasses
 #' @export
-NOT_DGT <- regex("\\D")
+NOT_DGT <- as.regex("\\D")
 
 #' @rdname CharacterClasses
 #' @export
-NOT_WRD <- regex("\\W")
+NOT_WRD <- as.regex("\\W")
 
 #' @rdname CharacterClasses
 #' @export
-NOT_SPC <- regex("\\S")
+NOT_SPC <- as.regex("\\S")
 
 #' @rdname CharacterClasses
 #' @export
-ASCII_DIGIT <- regex("0-9")
+ASCII_DIGIT <- as.regex("0-9")
 
 #' @rdname CharacterClasses
 #' @export
-ASCII_LOWER <- regex("a-z")
+ASCII_LOWER <- as.regex("a-z")
 
 #' @rdname CharacterClasses
 #' @export
-ASCII_UPPER <- regex("A-Z")
+ASCII_UPPER <- as.regex("A-Z")
 
 #' Word boundaries
 #'
@@ -260,8 +260,8 @@ NULL
 
 #' @rdname WordBoundaries
 #' @export
-BOUNDARY <- regex("\\b")
+BOUNDARY <- as.regex("\\b")
 
 #' @rdname WordBoundaries
 #' @export
-NOT_BOUNDARY <- regex("\\B")
+NOT_BOUNDARY <- as.regex("\\B")
