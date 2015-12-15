@@ -14,7 +14,8 @@ Depends:
 Imports:
     stats
 Suggests:
-    stringi
+    stringi,
+    testthat
 License: Unlimited
 LazyData: true
 RoxygenNote: 5.0.1
