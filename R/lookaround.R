@@ -20,6 +20,13 @@
 #' (rx_neg_lookahead <- "q" %R% negative_lookahead("u"))
 #' stringi::stri_detect_regex(x, rx_neg_class)
 #' stringi::stri_detect_regex(x, rx_neg_lookahead)
+#'
+#' # PRCE engine doesn't support lookbehind
+#' x2 <- c("queen", "vacuum")
+#' (rx_lookbehind <- lookbehind("q")) %R% "u"
+#' stringi::stri_detect_regex(x2, rx_lookbehind)
+#' try(grepl(rx_lookbehind, x2))
+#' try(grepl(rx_lookbehind, x2, perl = TRUE))
 #' @export
 lookahead <- function(x)
 {
