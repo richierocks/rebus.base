@@ -240,17 +240,21 @@ ascii_alnum <- function(lo, hi, char_class = TRUE)
 
 #' @rdname ClassGroups
 #' @export
-char_range <- function(lo, hi, char_class = lo != hi)
+char_range <- function(lo, hi, char_class = lo < hi)
 {
   lo <- get_first_char(lo)
   hi <- get_first_char(hi)
 
-  x <- if(lo == hi)
-  {
-    regex(lo)
-  } else
+  x <- if(lo < hi)
   {
     regex(lo, "-", hi)
+  } else if(lo == hi)
+  {
+    warning("'lo' and 'hi' are the same value.  Return 'lo'.")
+    as.regex(lo)
+  } else # lo > hi
+  {
+    stop("'hi' is less than 'lo'.")
   }
   if(char_class)
   {
