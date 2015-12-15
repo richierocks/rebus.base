@@ -10,7 +10,7 @@ Description: Build regular expressions piece by piece using human readable code.
     This package contains core functionality, and is primarily intended to be
     used by package developers.
 Depends:
-    R (>= 3.3.0)
+    R (>= 3.1.0)
 Imports:
     stats
 Suggests:
