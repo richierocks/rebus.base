@@ -43,13 +43,13 @@
 #' @export
 or <- function(..., capture = FALSE)
 {
-  if(length(list(...)) < 2)
+  n_dots <- length(list(...))
+  if(n_dots < 2)
   {
     warning(
-      "or is intended to be called with at least 2 arguments. ",
-      nargs(),
-      ngettext(nargs(), " was", " were"),
-      " passed. Maybe you wanted or1 instead?"
+      "'or' is intended to be called with at least 2 arguments in '...'. ",
+      sprintf(ngettext(n_dots, "%d was passed.", "%d were passed."), n_dots),
+      " Maybe you wanted 'or1' instead?"
     )
   }
   engroup(paste(..., sep = "|", collapse = NULL), capture)
