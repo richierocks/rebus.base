@@ -1,3 +1,29 @@
+context("repeated, bad lo")
+
+test_that(
+  "repeated with lo < 0 throws an error",
+  {
+    expect_error(
+      repeated("foo", -1),
+      "lo has negative values"
+    )
+  }
+)
+
+test_that(
+  "repeated with missing/NaN/infinite lo throws an error",
+  {
+    for(lo in c(NA, NaN, Inf))
+    {
+      expect_error(
+        repeated("foo", lo),
+        "lo has missing or infinite values",
+        info = paste("lo =", lo)
+      )
+    }
+  }
+)
+
 context("repeated, once")
 
 test_that(
@@ -59,10 +85,10 @@ test_that(
 context("repeated, impossible no. of reps")
 
 test_that(
-  "repeated with lo = 2, hi = 1, throws an error",
+  "repeated with hi < lo, throws an error",
   {
     expect_error(
-      repeated("foo", 2, 1, char_class = FALSE),
+      repeated("foo", 2, 1),
       "hi has values that are less than the corresponding values in lo"
     )
   }
@@ -170,7 +196,7 @@ test_that(
   "repeated with lo = 0, hi = 1, lazy = TRUE repeats + ?",
   {
     expected <- as.regex("[foo]??") # TODO: Is this right, or should it only be 1 '?'
-    actual <- repeated("foo", 0, Inf, lazy = TRUE, char_class = TRUE)
+    actual <- repeated("foo", 0, 1, lazy = TRUE, char_class = TRUE)
     expect_equal(actual, expected)
   }
 )

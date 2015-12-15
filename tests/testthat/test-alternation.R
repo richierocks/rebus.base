@@ -6,7 +6,7 @@ test_that(
     expected <- as.regex("(?:)")
     expect_warning(
       actual <- or(),
-      "or is intended to be called with at least 2 arguments. 0 were passed. Maybe you wanted or1 instead?"
+      "'or' is intended to be called with at least 2 arguments in '...'. 0 were passed. Maybe you wanted 'or1' instead?"
     )
     expect_equal(actual, expected)
   }
@@ -18,7 +18,7 @@ test_that(
     expected <- as.regex("(?:foo)")
     expect_warning(
       actual <- or("foo"),
-      "or is intended to be called with at least 2 arguments. 1 was passed. Maybe you wanted or1 instead?"
+      "'or' is intended to be called with at least 2 arguments in '...'. 1 was passed. Maybe you wanted 'or1' instead?"
     )
     expect_equal(actual, expected)
   }
@@ -30,7 +30,7 @@ test_that(
     expected <- as.regex("(foo)")
     expect_warning(
       actual <- or("foo", capture = TRUE),
-      "or is intended to be called with at least 2 arguments. 1 was passed. Maybe you wanted or1 instead?"
+      "'or' is intended to be called with at least 2 arguments in '...'. 1 was passed. Maybe you wanted 'or1' instead?"
     )
     expect_equal(actual, expected)
   }
