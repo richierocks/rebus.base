@@ -19,6 +19,25 @@ exactly <- function(x)
   regex(START, x, END)
 }
 
+#' Match a whole word
+#'
+#' Wraps a regex in word boundary tokens.
+#' @param x A character vector.
+#' @return A character vector representing part or all of a regular expression.
+#' @examples
+#' # A hex color
+#' (rx <- "cat")
+#' (rx_whole_word <- whole_word(rx))
+#'
+#' # Usage
+#' stringi::stri_detect_regex(c("cat", "tomcat", "catastrophe"), rx)
+#' stringi::stri_detect_regex(c("cat", "tomcat", "catastrophe"), rx_whole_word)
+#' @export
+whole_word <- function(x)
+{
+  regex(BOUNDARY, x, BOUNDARY)
+}
+
 #' Treat part of a regular expression literally
 #'
 #' Treats its contents as literal characters.
