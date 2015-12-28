@@ -1,7 +1,7 @@
 Package: rebus.base
 Title: Core Functionality for the 'rebus' Package
-Version: 0.0-1
-Date: 2015-12-16
+Version: 0.0-2
+Date: 2015-12-28
 Author: Richard Cotton [aut, cre]
 Maintainer: Richard Cotton <richierocks@gmail.com>
 Authors@R: person("Richard", "Cotton", role = c("aut", "cre"), email =
