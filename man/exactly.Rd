@@ -26,4 +26,7 @@ stringi::stri_detect_regex("ginger is #B06500", rx)
 stringi::stri_detect_regex("ginger is #B06500", rx_exact)
 stringi::stri_detect_regex("#B06500", rx_exact)
 }
+\seealso{
+\code{\link{whole_word}}
+}
 

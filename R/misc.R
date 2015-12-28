@@ -4,6 +4,7 @@
 #' of it.
 #' @param x A character vector.
 #' @return A character vector representing part or all of a regular expression.
+#' @seealso \code{\link{whole_word}}
 #' @examples
 #' # A hex color
 #' (rx <- "#" %R% hex_digit(6))
@@ -24,6 +25,7 @@ exactly <- function(x)
 #' Wraps a regex in word boundary tokens.
 #' @param x A character vector.
 #' @return A character vector representing part or all of a regular expression.
+#' @seealso \code{\link{WordBoundaries}}, \code{\link{exactly}}
 #' @examples
 #' # A hex color
 #' (rx <- "cat")

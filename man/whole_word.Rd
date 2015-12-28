@@ -24,4 +24,7 @@ Wraps a regex in word boundary tokens.
 stringi::stri_detect_regex(c("cat", "tomcat", "catastrophe"), rx)
 stringi::stri_detect_regex(c("cat", "tomcat", "catastrophe"), rx_whole_word)
 }
+\seealso{
+\code{\link{WordBoundaries}}, \code{\link{exactly}}
+}
 
