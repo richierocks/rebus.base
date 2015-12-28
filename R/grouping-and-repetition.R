@@ -1,4 +1,4 @@
-#' A range or char_class of characters.
+#' A range or char_class of characters
 #'
 #' Match a range or char_class of characters.
 #' @param ... Character vectors.
@@ -155,7 +155,10 @@ wrap_in_char_class <- function(x, char_class = NA)
   if(is.na(char_class))
   {
     # Starts with '[' (not '[:'), and ends with ']' (not ':]')
-    char_class <- !grepl("^\\[(?!:).*(?<!:)\\]$", x, perl = TRUE)
+    is_a_char_class <- grepl("^\\[(?!:).*(?<!:)\\]$", x, perl = TRUE)
+    # Starts with '(' and ends with ')'
+    is_a_group <- grepl("^\\(.*\\)$", x, perl = TRUE)
+    char_class <- !is_a_char_class & !is_a_group
   }
   if(char_class)
   {

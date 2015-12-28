@@ -19,7 +19,7 @@ exactly <- function(x)
   regex(START, x, END)
 }
 
-#' Treat part of a regular expression literally.
+#' Treat part of a regular expression literally
 #'
 #' Treats its contents as literal characters.
 #' @param x A character vector.

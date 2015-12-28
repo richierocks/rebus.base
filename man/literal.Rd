@@ -2,7 +2,7 @@
 % Please edit documentation in R/misc.R
 \name{literal}
 \alias{literal}
-\title{Treat part of a regular expression literally.}
+\title{Treat part of a regular expression literally}
 \usage{
 literal(x)
 }

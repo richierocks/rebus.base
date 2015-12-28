@@ -201,3 +201,120 @@ test_that(
   }
 )
 
+
+context("optional")
+
+test_that(
+  "optional with a token wraps in a class and appends a ?",
+  {
+    expected <- as.regex("[foo]?")
+    actual <- optional("foo")
+    expect_equal(actual, expected)
+  }
+)
+
+test_that(
+  "optional with a character class only appends a ?",
+  {
+    expected <- as.regex("[foo]?")
+    actual <- optional("[foo]")
+    expect_equal(actual, expected)
+  }
+)
+
+test_that(
+  "optional with a capture group only appends a ?",
+  {
+    expected <- as.regex("(foo)?")
+    actual <- optional("(foo)")
+    expect_equal(actual, expected)
+  }
+)
+
+test_that(
+  "optional with a non-capture group only appends a ?",
+  {
+    expected <- as.regex("(?:foo)?")
+    actual <- optional("(?:foo)")
+    expect_equal(actual, expected)
+  }
+)
+
+
+context("zero_or_more")
+
+test_that(
+  "zero_or_more with a token wraps in a class and appends a *",
+  {
+    expected <- as.regex("[foo]*")
+    actual <- zero_or_more("foo")
+    expect_equal(actual, expected)
+  }
+)
+
+test_that(
+  "zero_or_more with a character class only appends a *",
+  {
+    expected <- as.regex("[foo]*")
+    actual <- zero_or_more("[foo]")
+    expect_equal(actual, expected)
+  }
+)
+
+test_that(
+  "zero_or_more with a capture group only appends a *",
+  {
+    expected <- as.regex("(foo)*")
+    actual <- zero_or_more("(foo)")
+    expect_equal(actual, expected)
+  }
+)
+
+test_that(
+  "zero_or_more with a non-capture group only appends a *",
+  {
+    expected <- as.regex("(?:foo)*")
+    actual <- zero_or_more("(?:foo)")
+    expect_equal(actual, expected)
+  }
+)
+
+
+context("one_or_more")
+
+test_that(
+  "one_or_more with a token wraps in a class and appends a +",
+  {
+    expected <- as.regex("[foo]+")
+    actual <- one_or_more("foo")
+    expect_equal(actual, expected)
+  }
+)
+
+test_that(
+  "one_or_more with a character class only appends a +",
+  {
+    expected <- as.regex("[foo]+")
+    actual <- one_or_more("[foo]")
+    expect_equal(actual, expected)
+  }
+)
+
+test_that(
+  "one_or_more with a capture group only appends a +",
+  {
+    expected <- as.regex("(foo)+")
+    actual <- one_or_more("(foo)")
+    expect_equal(actual, expected)
+  }
+)
+
+test_that(
+  "one_or_more with a non-capture group only appends a +",
+  {
+    expected <- as.regex("(?:foo)+")
+    actual <- one_or_more("(?:foo)")
+    expect_equal(actual, expected)
+  }
+)
+

@@ -4,7 +4,7 @@
 \alias{char_class}
 \alias{negate_and_group}
 \alias{negated_char_class}
-\title{A range or char_class of characters.}
+\title{A range or char_class of characters}
 \usage{
 char_class(...)
 
