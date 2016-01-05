@@ -1,6 +1,7 @@
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 [![Is the package on CRAN?](http://www.r-pkg.org/badges/version/rebus.base)](http://www.r-pkg.org/pkg/rebus.base)
-[![Build Status](https://semaphoreci.com/api/v1/projects/535d7d77-f416-4ed9-aa69-bba5a38df545/635152/badge.svg)](https://semaphoreci.com/richierocks/rebus-base)
+[![SemaphoreCI Build Status](https://semaphoreci.com/api/v1/projects/535d7d77-f416-4ed9-aa69-bba5a38df545/635152/badge.svg)](https://semaphoreci.com/richierocks/rebus-base)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/ah32txok331kk79t?svg=true)](https://ci.appveyor.com/project/richierocks/rebus-base)
 
 # rebus.base: Regular Expression Builder, Um, Something (Base Functionality)
 
