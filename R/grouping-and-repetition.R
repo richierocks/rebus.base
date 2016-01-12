@@ -162,8 +162,10 @@ wrap_in_char_class <- function(x, char_class = NA)
   }
   if(char_class)
   {
-    x <- char_class(x)
+    char_class(x)
+  } else
+  {
+    as.regex(x)
   }
-  x
 }
 
