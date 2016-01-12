@@ -41,7 +41,7 @@ install_github("richierocks/rebus.base")
 
 Character classes to both constant and functional forms, the latter allowing matching of repeated values.  For example, `ALPHA` represents an alphabetic character (equivalent to `[:alpha:]`), whereas `alpha(3, 6)` matches between 3 and 6 alphabetic characters (equivalent to `[[:alpha:]]{3,6}`).
 
-All the R-specific classes described on the `?regex` page are supported, along with generic shorthand classes, and some characte ranges. For example `DIGIT` is the R-specifc form of a number (equivalent to `[:digit:]`), `DGT` represents the shorthand class (equivalent to `\\d`), and `ASCII_DIGIT` uses a number range (equivalent to `[0-9]`).
+All the POSIX classes described on the `?regex` page are supported, along with generic shorthand classes, and some character ranges. For example `DIGIT` is the R-specifc form of a number (equivalent to `[:digit:]`), `DGT` represents the shorthand class (equivalent to `\\d`), and `ASCII_DIGIT` uses a number range (equivalent to `[0-9]`).  See [*rebus.unicode*](https://github.com/richierocks/rebus.unicode) for Unicode General Categories and Unicode Properties which are preferred over POSIX classes for *stringi* and *stringr*.
 
 Custom character classes can be created using `char_class`.  For example, to match lower case letters and punctuation, you can use `char_class(LOWER %R% PUNCT)` (equivalent to `[[:lower:][:punct:]]`).  Here, `%R%` is a regular expression concatenation operator.
 
@@ -89,7 +89,7 @@ Zero-length assertions match characters then give up the match.  `lookahead` and
 
 `duplicate_group_names` allows groups to have the same names.
 
-`no_backslash_escaping` turns off backslahs escaping.
+`no_backslash_escaping` turns off backslash escaping.
 
 `modify_mode` allows multiple mode-modifiers to be set at once.
 
