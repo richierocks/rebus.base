@@ -73,6 +73,10 @@ OPEN_BRACKET <- as.regex("\\[")
 
 #' @rdname SpecialCharacters
 #' @export
+CLOSE_BRACKET <- as.regex("\\]")
+
+#' @rdname SpecialCharacters
+#' @export
 OPEN_BRACE <- as.regex("\\{")
 
 #' The start or end of a string.
