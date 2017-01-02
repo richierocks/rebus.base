@@ -61,7 +61,11 @@ ICU_REF8
 ICU_REF9
 }
 \description{
-Backreferences for replacement operations.
+Backreferences for replacement operations.  These are used by replacement
+functions such as \code{\link[base]{sub}} and
+\code{\link[stringi]{stri_replace_first_regex}}, and by the \code{stringi}
+and \code{stringr} match functions such as
+\code{\link[stringi]{stri_match_first_regex}}.
 }
 \examples{
 # For R's PCRE and Perl engines
@@ -83,6 +87,10 @@ stringi::stri_replace_first_regex("abcd", "a(b)c(d)", ICU_REF1 \%R\% ICU_REF2)
 \references{
 \url{http://www.regular-expressions.info/backref.html} and
 \url{http://www.rexegg.com/regex-capture.html}
+}
+\seealso{
+\code{\link{capture}}, for creating capture groups that can be
+referred to.
 }
 \keyword{datasets}
 

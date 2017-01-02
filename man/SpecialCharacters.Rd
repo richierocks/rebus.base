@@ -4,6 +4,7 @@
 \name{SpecialCharacters}
 \alias{BACKSLASH}
 \alias{CARET}
+\alias{CLOSE_BRACKET}
 \alias{CLOSE_PAREN}
 \alias{DOLLAR}
 \alias{DOT}
@@ -40,10 +41,12 @@ CLOSE_PAREN
 
 OPEN_BRACKET
 
+CLOSE_BRACKET
+
 OPEN_BRACE
 }
 \description{
-Constants to match special characters
+Constants to match special characters.
 }
 \examples{
 BACKSLASH
@@ -57,6 +60,7 @@ PLUS
 OPEN_PAREN
 CLOSE_PAREN
 OPEN_BRACKET
+CLOSE_BRACKET
 OPEN_BRACE
 
 # Usage
@@ -65,12 +69,29 @@ rx <- BACKSLASH \%R\% CARET \%R\% DOLLAR \%R\% DOT
 stringi::stri_detect_regex(x, rx)
 # No escapes - these chars have special meaning inside regex
 stringi::stri_detect_regex(x, x)
+
+# Usually closing brackets can be matched without escaping
+stringi::stri_detect_regex("]", "]")
+# If you want to match a closing bracket inside a character class
+# the closing bracket must be placed first
+(rx <- char_class("]a"))
+stringi::stri_detect_regex("]", rx)
+# ICU and Perl also allows you to place the closing bracket in
+# other positions if you escape it
+(rx <- char_class("a", CLOSE_BRACKET))
+stringi::stri_detect_regex("]", rx)
+grepl(rx, "]", perl = TRUE)
+# PCRE does not allow this
+grepl(rx, "]")
 }
 \references{
 \url{http://www.regular-expressions.info/characters.html}
 }
 \seealso{
-\code{\link{ALPHA}}, \code{\link{START}}, \code{\link{BOUNDARY}}
+\code{\link{escape_special}} for the functional form,
+\code{\link{CharacterClasses}} for regex metacharacters,
+\code{\link{Anchors}} for constants to match the start/end of a string,
+\code{\link{WordBoundaries}} for contants to match the start/end of a word.
 }
 \keyword{datasets}
 

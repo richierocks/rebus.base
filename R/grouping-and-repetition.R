@@ -1,6 +1,7 @@
 #' A range or char_class of characters
 #'
-#' Match a range or char_class of characters.
+#' Group characters together in a class to match any of them (\code{char_class})
+#' or none of them (\code{negated_char_class}).
 #' @param ... Character vectors.
 #' @return A character vector representing part or all of a regular expression.
 #' @references \url{http://www.regular-expressions.info/charclass.html}
@@ -9,8 +10,11 @@
 #' negated_char_class(LOWER, "._")
 #'
 #' # Usage
+#' x <- (1:10) ^ 2
 #' (rx_odd <- char_class(1, 3, 5, 7, 9))
-#' stringi::stri_detect_regex((1:10) ^ 2, rx_odd)
+#' (rx_not_odd <- negated_char_class(1, 3, 5, 7, 9))
+#' stringi::stri_detect_regex(x, rx_odd)
+#' stringi::stri_detect_regex(x, rx_not_odd)
 #' @export
 char_class <- function(...)
 {
@@ -61,6 +65,15 @@ negate_and_group <- function(...)
 #'
 #' # Overriding character class wrapping
 #' repeated(ANY_CHAR, 2, 5, char_class = FALSE)
+#'
+#' # Usage
+#' x <- "1234567890"
+#' stringi::stri_extract_first_regex(x, one_or_more(DIGIT))
+#' stringi::stri_extract_first_regex(x, repeated(DIGIT, lo = 3, hi = 6))
+#' stringi::stri_extract_first_regex(x, lazy(repeated(DIGIT, lo = 3, hi = 6)))
+#'
+#' col <- c("color", "colour")
+#' stringi::stri_detect_regex(col, "colo" %R% optional("u") %R% "r")
 #' @include internal.R
 #' @export
 repeated <- function(x, lo, hi, lazy = FALSE, char_class = NA)

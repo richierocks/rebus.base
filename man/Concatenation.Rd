@@ -27,7 +27,8 @@ Operator equivalent of \code{regex}.
 though, so it has been replaced with \code{\%R\%}.
 }
 \examples{
-letters \%R\% LETTERS
+# Notice the recycling
+letters \%R\% month.abb
 }
 \seealso{
 \code{\link{regex}}, \code{\link[base]{paste}}

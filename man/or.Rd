@@ -43,10 +43,11 @@ anything.
 }
 \examples{
 # or takes an arbitrary number of arguments and groups them without capture
-or(letters, LETTERS, "foo")
+# Notice the recycling of inputs
+or(letters, month.abb, "foo")
 
 # or1 takes a single character vector
-or1(c(letters, LETTERS, "foo")) # Not the same as before!
+or1(c(letters, month.abb, "foo")) # Not the same as before!
 
 # Capture the group
 or1(letters, capture = TRUE)
@@ -55,7 +56,7 @@ or1(letters, capture = TRUE)
 or1(letters, capture = NA)
 
 # The pipe operator doesn't group
-letters \%|\% LETTERS \%|\% "foo"
+letters \%|\% month.abb \%|\% "foo"
 
 # Usage
 (rx <- or("dog", "cat", "hippopotamus"))

@@ -14,6 +14,7 @@
 #' recycle(1:4, list(a = month.abb, b = pi), matrix(1:6, nrow = 3))
 #' }
 #' @importFrom stats setNames
+#' @noRd
 recycle <- function(...)
 {
   dots <- list(...)

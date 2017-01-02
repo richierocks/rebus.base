@@ -1,39 +1,11 @@
-#' Make a regex exact
-#'
-#' Makes a regex exact: that is, it must contain the whole string, not just part
-#' of it.
-#' @param x A character vector.
-#' @return A character vector representing part or all of a regular expression.
-#' @seealso \code{\link{whole_word}}
-#' @examples
-#' # A hex color
-#' (rx <- "#" %R% hex_digit(6))
-#' (rx_exact <- exactly(rx))
-#'
-#' # Usage
-#' stringi::stri_detect_regex("ginger is #B06500", rx)
-#' stringi::stri_detect_regex("ginger is #B06500", rx_exact)
-#' stringi::stri_detect_regex("#B06500", rx_exact)
+#' @rdname Anchors
 #' @export
 exactly <- function(x)
 {
   regex(START, x, END)
 }
 
-#' Match a whole word
-#'
-#' Wraps a regex in word boundary tokens.
-#' @param x A character vector.
-#' @return A character vector representing part or all of a regular expression.
-#' @seealso \code{\link{WordBoundaries}}, \code{\link{exactly}}
-#' @examples
-#' # A hex color
-#' (rx <- "cat")
-#' (rx_whole_word <- whole_word(rx))
-#'
-#' # Usage
-#' stringi::stri_detect_regex(c("cat", "tomcat", "catastrophe"), rx)
-#' stringi::stri_detect_regex(c("cat", "tomcat", "catastrophe"), rx_whole_word)
+#' @rdname WordBoundaries
 #' @export
 whole_word <- function(x)
 {
@@ -42,7 +14,8 @@ whole_word <- function(x)
 
 #' Treat part of a regular expression literally
 #'
-#' Treats its contents as literal characters.
+#' Treats its contents as literal characters. Equivalent to using
+#' \code{fixed = TRUE}, but for part of the pattern rather than all of it.
 #' @param x A character vector.
 #' @return A character vector representing part or all of a regular expression.
 #' @examples

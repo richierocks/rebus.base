@@ -1,12 +1,12 @@
 
 #' Convert or test for regex objects
-#' 
+#'
 #' \code{as.regex} gives objects the class \code{"regex"}. \code{is.regex}
 #' tests for objects of class \code{"regex"}.
 #' @param x An object to test or convert.
-#' @return \code{as.regex} returns the inputs object, with class 
+#' @return \code{as.regex} returns the inputs object, with class
 #' \code{c("regex", "character")}.
-#' \code{is.regex} returns \code{TRUE} when the input inherits from class 
+#' \code{is.regex} returns \code{TRUE} when the input inherits from class
 #' \code{"regex"} and \code{FALSE} otherwise.
 #' @examples
 #' x <- as.regex("month.abb")
@@ -26,8 +26,8 @@ is.regex <- function(x)
 }
 
 #' Create a regex
-#' 
-#' Creates a regex object. 
+#'
+#' Creates a regex object.
 #' @param ... Passed to \code{paste0}.
 #' @return An object of class \code{regex}.
 #' @note This works like \code{paste0}, but the returns value has class
@@ -42,9 +42,12 @@ regex <- function(...)
 }
 
 #' Print or format regex objects
-#' 
+#'
 #' Prints/formats objects of class \code{regex}.
 #' @param x A regex object.
+#' @param encode_string If \code{TRUE}, the regex is encoded with
+#' \code{\link[base]{encodeString}}. This means that backslashes are doubled,
+#' compared to the default of \code{FALSE}.
 #' @param ... Passed from other format methods.  Currently ignored.
 #' @return \code{format.regex} returns a character vector. \code{print.regex}
 #' is invoked for the side effect of printing the regex object.
@@ -54,12 +57,17 @@ regex <- function(...)
 #' @export
 format.regex <- function(x, ...)
 {
-  paste0("<regex> ", x) 
+  paste0("<regex> ", x)
 }
 
 #' @rdname format.regex
 #' @export
-print.regex <- function(x, ...)
+print.regex <- function(x, encode_string = FALSE, ...)
 {
-  cat(format(x, ...), sep = "\n")
+  x2 <- if(encode_string)
+  {
+    as.regex(encodeString(x))
+  } else x
+  cat(format(x2), sep = "\n")
+  invisible(x)
 }

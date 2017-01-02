@@ -82,7 +82,8 @@ ASCII_ALNUM
 UNMATCHABLE
 }
 \description{
-Match a class of values.
+Match a class of values. These are typically used in combination with
+\code{\link{char_class}} to create new character classes.
 }
 \examples{
 # R character classes
@@ -126,7 +127,10 @@ rx <- LOWER \%R\% DIGIT \%R\% SPACE \%R\% UPPER
 stringi::stri_detect_regex(x, rx)
 }
 \seealso{
-\code{\link{alnum}}, \code{\link{BACKSLASH}}, \code{\link{START}}, \code{\link{BOUNDARY}}
+\code{\link{ClassGroups}} for the functional form,
+\code{\link{SpecialCharacters}} for regex metacharacters,
+\code{\link{Anchors}} for constants to match the start/end of a string,
+\code{\link{WordBoundaries}} for contants to match the start/end of a word.
 }
 \keyword{datasets}
 

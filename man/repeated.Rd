@@ -53,6 +53,15 @@ lazy(one_or_more(cntrl()))
 
 # Overriding character class wrapping
 repeated(ANY_CHAR, 2, 5, char_class = FALSE)
+
+# Usage
+x <- "1234567890"
+stringi::stri_extract_first_regex(x, one_or_more(DIGIT))
+stringi::stri_extract_first_regex(x, repeated(DIGIT, lo = 3, hi = 6))
+stringi::stri_extract_first_regex(x, lazy(repeated(DIGIT, lo = 3, hi = 6)))
+
+col <- c("color", "colour")
+stringi::stri_detect_regex(col, "colo" \%R\% optional("u") \%R\% "r")
 }
 \references{
 \url{http://www.regular-expressions.info/repeat.html} and

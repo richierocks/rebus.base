@@ -10,7 +10,8 @@
 #' though, so it has been replaced with \code{\%R\%}.
 #' @seealso \code{\link{regex}}, \code{\link[base]{paste}}
 #' @examples
-#' letters %R% LETTERS
+#' # Notice the recycling
+#' letters %R% month.abb
 #' @name Concatenation
 #' @export
 `%c%` <- function(x, y)

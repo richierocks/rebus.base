@@ -13,9 +13,9 @@ is.regex(x)
 \item{x}{An object to test or convert.}
 }
 \value{
-\code{as.regex} returns the inputs object, with class 
+\code{as.regex} returns the inputs object, with class
 \code{c("regex", "character")}.
-\code{is.regex} returns \code{TRUE} when the input inherits from class 
+\code{is.regex} returns \code{TRUE} when the input inherits from class
 \code{"regex"} and \code{FALSE} otherwise.
 }
 \description{

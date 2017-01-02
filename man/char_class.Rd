@@ -19,15 +19,19 @@ negate_and_group(...)
 A character vector representing part or all of a regular expression.
 }
 \description{
-Match a range or char_class of characters.
+Group characters together in a class to match any of them (\code{char_class})
+or none of them (\code{negated_char_class}).
 }
 \examples{
 char_class(LOWER, "._")
 negated_char_class(LOWER, "._")
 
 # Usage
+x <- (1:10) ^ 2
 (rx_odd <- char_class(1, 3, 5, 7, 9))
-stringi::stri_detect_regex((1:10) ^ 2, rx_odd)
+(rx_not_odd <- negated_char_class(1, 3, 5, 7, 9))
+stringi::stri_detect_regex(x, rx_odd)
+stringi::stri_detect_regex(x, rx_not_odd)
 }
 \references{
 \url{http://www.regular-expressions.info/charclass.html}

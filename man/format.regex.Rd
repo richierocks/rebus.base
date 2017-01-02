@@ -7,12 +7,16 @@
 \usage{
 \method{format}{regex}(x, ...)
 
-\method{print}{regex}(x, ...)
+\method{print}{regex}(x, encode_string = FALSE, ...)
 }
 \arguments{
 \item{x}{A regex object.}
 
 \item{...}{Passed from other format methods.  Currently ignored.}
+
+\item{encode_string}{If \code{TRUE}, the regex is encoded with
+\code{\link[base]{encodeString}}. This means that backslashes are doubled,
+compared to the default of \code{FALSE}.}
 }
 \value{
 \code{format.regex} returns a character vector. \code{print.regex}

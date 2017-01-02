@@ -1,8 +1,14 @@
 #' Backreferences
 #'
-#' Backreferences for replacement operations.
+#' Backreferences for replacement operations.  These are used by replacement
+#' functions such as \code{\link[base]{sub}} and
+#' \code{\link[stringi]{stri_replace_first_regex}}, and by the \code{stringi}
+#' and \code{stringr} match functions such as
+#' \code{\link[stringi]{stri_match_first_regex}}.
 #' @references \url{http://www.regular-expressions.info/backref.html} and
 #' \url{http://www.rexegg.com/regex-capture.html}
+#' @seealso \code{\link{capture}}, for creating capture groups that can be
+#' referred to.
 #' @examples
 #' # For R's PCRE and Perl engines
 #' REF1

@@ -95,7 +95,12 @@ Match character classes.
 }
 \note{
 R has many built-in locale-dependent character classes, like
-\code{[:alnum:]} (representing lower or upper case letters or numbers).
+\code{[:alnum:]} (representing alphanumeric characters, that is lower or
+upper case letters or numbers). Some of these behave in unexpected ways
+when using the ICU engine (that is, when using \code{stringi} or
+\code{stringr}). See the punctuation example. For these engines, using
+Unicode properties (\code{\link[rebus.unicode]{UnicodeProperty}}) may give
+you a more reliable match.
 There are also some generic character classes like \code{\\w} (representing
 lower or upper case letters or numbers or underscores).
 Finally, there are ASCII-only ways of specifying letters like \code{a-zA-Z}.
@@ -151,6 +156,20 @@ char_range(0, 7) # octal number
 # Usage
 (rx <- digit(3))
 stringi::stri_detect_regex(c("123", "one23"), rx)
+
+# Some classes behave differently under different engines
+# In particular PRCE and Perl recognise all these characters
+# as punctuation but ICU does not
+p <- c(
+  "!", "@", "#", "$", "\%", "^", "&", "*", "(", ")", "[", "]", "{", "}", ";",
+  ":", "'", '"', ",", "<", ">", ".", "/", "?", "\\\\", "|", "`", "~"
+)
+icu_matched <- stringi::stri_detect_regex(p, punct())
+p[icu_matched]
+p[!icu_matched]
+pcre_matched <- grepl(punct(), p)
+p[pcre_matched]
+p[!pcre_matched]
 }
 \references{
 \url{http://www.regular-expressions.info/shorthand.html} and
