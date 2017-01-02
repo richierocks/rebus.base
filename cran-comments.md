@@ -4,14 +4,16 @@ This release extracts core functionality from the *rebus* package.
 
 ## Test Environments
 
-* Windows 10, R-devel r69745 and R-3.2.3patched r69744
+* Local macOS Sierra, R-devel
 * Semaphore CI + Ubuntu 14.04, R-devel and R-release
+* AppVeyor + Windows Server 2012, R-devel
+* R-hub
 
 ## R CMD check results
 
-There were no ERRORs.  You may see a WARNING about a missing cross reference to 
-the *rebus.unicode* package, which will be uploaded shortly.
+There were no ERRORs or WARNINGs.
 
 ## Downstream dependencies
 
-*rebus* tested locally and builds without errors or warnings.
+New versions of rebus.unicode and rebus will be uploaded once this has been 
+accepted on CRAN.
