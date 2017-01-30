@@ -40,6 +40,7 @@
 #'
 #' # Generic classes
 #' any_char()
+#' grapheme()
 #' dgt()
 #' wrd()
 #' spc()
@@ -84,6 +85,11 @@
 #' pcre_matched <- grepl(punct(), p)
 #' p[pcre_matched]
 #' p[!pcre_matched]
+#'
+#' # A grapheme is a character that can be defined by more than one code point
+#' # PCRE does not recognise the concept.
+#' x <- c("Chloe", "Chlo\u00e9", "Chlo\u0065\u0301")
+#' stringi::stri_match_all_regex(x, grapheme())
 #' @include constants.R
 #' @include grouping-and-repetition.R
 #' @name ClassGroups
@@ -178,6 +184,13 @@ hex_digit <- function(lo, hi, char_class = TRUE)
 any_char <- function(lo, hi)
 {
   repeated(ANY_CHAR, lo, hi, char_class = FALSE)
+}
+
+#' @rdname ClassGroups
+#' @export
+grapheme <- function(lo, hi)
+{
+  repeated(GRAPHEME, lo, hi, char_class = FALSE)
 }
 
 #' @rdname ClassGroups

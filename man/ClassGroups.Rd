@@ -16,6 +16,7 @@
 \alias{dgt}
 \alias{digit}
 \alias{graph}
+\alias{grapheme}
 \alias{hex_digit}
 \alias{lower}
 \alias{not_dgt}
@@ -54,6 +55,8 @@ upper(lo, hi, char_class = TRUE)
 hex_digit(lo, hi, char_class = TRUE)
 
 any_char(lo, hi)
+
+grapheme(lo, hi)
 
 dgt(lo, hi, char_class = TRUE)
 
@@ -126,6 +129,7 @@ hex_digit()
 
 # Generic classes
 any_char()
+grapheme()
 dgt()
 wrd()
 spc()

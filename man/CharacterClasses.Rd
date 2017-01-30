@@ -16,6 +16,7 @@
 \alias{DGT}
 \alias{DIGIT}
 \alias{GRAPH}
+\alias{GRAPHEME}
 \alias{HEX_DIGIT}
 \alias{LOWER}
 \alias{NOT_DGT}
@@ -56,6 +57,8 @@ UPPER
 HEX_DIGIT
 
 ANY_CHAR
+
+GRAPHEME
 
 DGT
 
@@ -102,6 +105,7 @@ HEX_DIGIT
 
 # Generic classes
 ANY_CHAR
+GRAPHEME
 DGT
 WRD
 SPC
