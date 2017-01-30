@@ -174,6 +174,11 @@ p[!icu_matched]
 pcre_matched <- grepl(punct(), p)
 p[pcre_matched]
 p[!pcre_matched]
+
+# A grapheme is a character that can be defined by more than one code point
+# PCRE does not recognise the concept.
+x <- c("Chloe", "Chlo\\u00e9", "Chlo\\u0065\\u0301")
+stringi::stri_match_all_regex(x, grapheme())
 }
 \references{
 \url{http://www.regular-expressions.info/shorthand.html} and

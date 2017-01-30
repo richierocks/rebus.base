@@ -1,3 +1,4 @@
+0.0-3 Added GRAPHEME.
 0.0-2 Added CLOSE_BRACKET.
       Fixed wrap_in_char_class.
       Added whole_word.
