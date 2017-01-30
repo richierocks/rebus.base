@@ -19,6 +19,7 @@
 \alias{GRAPHEME}
 \alias{HEX_DIGIT}
 \alias{LOWER}
+\alias{NEWLINE}
 \alias{NOT_DGT}
 \alias{NOT_SPC}
 \alias{NOT_WRD}
@@ -59,6 +60,8 @@ HEX_DIGIT
 ANY_CHAR
 
 GRAPHEME
+
+NEWLINE
 
 DGT
 
@@ -103,9 +106,12 @@ SPACE
 UPPER
 HEX_DIGIT
 
-# Generic classes
+# Special chars
 ANY_CHAR
 GRAPHEME
+NEWLINE
+
+# Generic classes
 DGT
 WRD
 SPC

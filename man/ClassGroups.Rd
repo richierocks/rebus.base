@@ -19,6 +19,7 @@
 \alias{grapheme}
 \alias{hex_digit}
 \alias{lower}
+\alias{newline}
 \alias{not_dgt}
 \alias{not_spc}
 \alias{not_wrd}
@@ -57,6 +58,8 @@ hex_digit(lo, hi, char_class = TRUE)
 any_char(lo, hi)
 
 grapheme(lo, hi)
+
+newline(lo, hi)
 
 dgt(lo, hi, char_class = TRUE)
 
@@ -178,7 +181,11 @@ p[!pcre_matched]
 # A grapheme is a character that can be defined by more than one code point
 # PCRE does not recognise the concept.
 x <- c("Chloe", "Chlo\\u00e9", "Chlo\\u0065\\u0301")
-stringi::stri_match_all_regex(x, grapheme())
+stringi::stri_match_first_regex(x, "Chlo" \%R\% capture(grapheme()))
+
+# newline() matches three types of line ending: \\r, \\n, \\r\\n.
+# You can standardize line endings using
+stringi::stri_replace_all_regex("foo\\nbar\\r\\nbaz\\rquux", NEWLINE, "\\n")
 }
 \references{
 \url{http://www.regular-expressions.info/shorthand.html} and

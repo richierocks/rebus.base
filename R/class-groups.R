@@ -89,7 +89,11 @@
 #' # A grapheme is a character that can be defined by more than one code point
 #' # PCRE does not recognise the concept.
 #' x <- c("Chloe", "Chlo\u00e9", "Chlo\u0065\u0301")
-#' stringi::stri_match_all_regex(x, grapheme())
+#' stringi::stri_match_first_regex(x, "Chlo" %R% capture(grapheme()))
+#'
+#' # newline() matches three types of line ending: \r, \n, \r\n.
+#' # You can standardize line endings using
+#' stringi::stri_replace_all_regex("foo\nbar\r\nbaz\rquux", NEWLINE, "\n")
 #' @include constants.R
 #' @include grouping-and-repetition.R
 #' @name ClassGroups
@@ -191,6 +195,13 @@ any_char <- function(lo, hi)
 grapheme <- function(lo, hi)
 {
   repeated(GRAPHEME, lo, hi, char_class = FALSE)
+}
+
+#' @rdname ClassGroups
+#' @export
+newline <- function(lo, hi)
+{
+  repeated(NEWLINE, lo, hi, char_class = FALSE)
 }
 
 #' @rdname ClassGroups
