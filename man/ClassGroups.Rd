@@ -61,17 +61,17 @@ grapheme(lo, hi)
 
 newline(lo, hi)
 
-dgt(lo, hi, char_class = TRUE)
+dgt(lo, hi, char_class = FALSE)
 
-wrd(lo, hi, char_class = TRUE)
+wrd(lo, hi, char_class = FALSE)
 
-spc(lo, hi, char_class = TRUE)
+spc(lo, hi, char_class = FALSE)
 
-not_dgt(lo, hi, char_class = TRUE)
+not_dgt(lo, hi, char_class = FALSE)
 
-not_wrd(lo, hi, char_class = TRUE)
+not_wrd(lo, hi, char_class = FALSE)
 
-not_spc(lo, hi, char_class = TRUE)
+not_spc(lo, hi, char_class = FALSE)
 
 ascii_digit(lo, hi, char_class = TRUE)
 
@@ -108,7 +108,9 @@ when using the ICU engine (that is, when using \code{stringi} or
 Unicode properties (\code{\link[rebus.unicode]{UnicodeProperty}}) may give
 you a more reliable match.
 There are also some generic character classes like \code{\\w} (representing
-lower or upper case letters or numbers or underscores).
+lower or upper case letters or numbers or underscores). Since version 0.0-3,
+these use the default \code{char_class = FALSE}, since they already act as
+character classes.
 Finally, there are ASCII-only ways of specifying letters like \code{a-zA-Z}.
 Which version you want depends upon how you want to deal with international
 characters, and the vagaries of the underlying regular expression engine.
@@ -130,9 +132,12 @@ space()
 upper()
 hex_digit()
 
-# Generic classes
+# Special chars
 any_char()
 grapheme()
+newline()
+
+# Generic classes
 dgt()
 wrd()
 spc()
