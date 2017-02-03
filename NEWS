@@ -1,6 +1,7 @@
-0.0-3 Added GRAPHEME.
+0.0-3 Added GRAPHEME, NEWLINE + their functional equivalents.
+      dgt(), spc(), etc. have new default of char_class = FALSE.
 0.0-2 Added CLOSE_BRACKET.
       Fixed wrap_in_char_class.
-      Added whole_word.
+      Added whole_word().
       More examples and docs.
 0.0-1 First release.
