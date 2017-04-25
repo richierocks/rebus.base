@@ -1,6 +1,6 @@
 ## Release Summary
 
-This release extracts core functionality from the *rebus* package.
+This release adds a couple of minor features for matching graphemes, and controlling the case of replacement values in Perl regexes.
 
 ## Test Environments
 
@@ -15,5 +15,5 @@ There were no ERRORs or WARNINGs.
 
 ## Downstream dependencies
 
-New versions of rebus.unicode and rebus will be uploaded once this has been 
+A new version of rebus will be uploaded once this has been 
 accepted on CRAN.
