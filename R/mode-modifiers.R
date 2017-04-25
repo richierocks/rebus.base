@@ -1,5 +1,5 @@
 #' Apply mode modifiers
-#' 
+#'
 #' Applies one or more mode modifiers to the regular expression.
 #' @param x A character vector.
 #' @param modes A character vector of mode modifiers.
@@ -20,7 +20,7 @@
 modify_mode <- function(x, modes = c("i", "x", "s", "m", "J", "X"))
 {
   modes <- paste0(match.arg(modes, several.ok = TRUE), collapse = "")
-  regex("(?", modes, ")", x, "(?-", modes, ")") 
+  regex("(?", modes, ")", x, "(?-", modes, ")")
 }
 
 #' @rdname modify_mode
@@ -63,4 +63,36 @@ duplicate_group_names <- function(x)
 no_backslash_escaping <- function(x)
 {
   modify_mode(x, "X")
+}
+
+#' Force the case of replacement values
+#'
+#' Forces replacement values to be upper or lower case.
+#' @param x A character vector.
+#' @return A character vector representing part or all of a regular expression.
+#' @references \url{http://www.regular-expressions.info/replacecase.html}
+#' @examples
+#' # Convert to title case using Perl regex
+#' x <- "In caSE of DISASTER, PuLl tHe CoRd"
+#' matching_rx <- capture(WRD) %R% capture(wrd(1, Inf))
+#' replacement_rx <- as_upper(REF1) %R% as_lower(REF2)
+#' gsub(matching_rx, replacement_rx, x, perl = TRUE)
+#'
+#' # PCRE and ICU do not currently support this operation
+#' # The next lines are intended to return gibberish
+#' gsub(matching_rx, replacement_rx, x)
+#' replacement_rx_icu <- as_upper(ICU_REF1) %R% as_lower(ICU_REF2)
+#' stringi::stri_replace_all_regex(x, matching_rx, replacement_rx_icu)
+#' @name ReplacementCase
+#' @export
+as_lower <- function(x)
+{
+  regex("\\L", x, "\\E")
+}
+
+#' @rdname ReplacementCase
+#' @export
+as_upper <- function(x)
+{
+  regex("\\U", x, "\\E")
 }
