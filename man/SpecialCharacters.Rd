@@ -2,20 +2,20 @@
 % Please edit documentation in R/constants.R
 \docType{data}
 \name{SpecialCharacters}
+\alias{SpecialCharacters}
 \alias{BACKSLASH}
 \alias{CARET}
-\alias{CLOSE_BRACKET}
-\alias{CLOSE_PAREN}
 \alias{DOLLAR}
 \alias{DOT}
-\alias{OPEN_BRACE}
-\alias{OPEN_BRACKET}
-\alias{OPEN_PAREN}
 \alias{PIPE}
-\alias{PLUS}
 \alias{QUESTION}
 \alias{STAR}
-\alias{SpecialCharacters}
+\alias{PLUS}
+\alias{OPEN_PAREN}
+\alias{CLOSE_PAREN}
+\alias{OPEN_BRACKET}
+\alias{CLOSE_BRACKET}
+\alias{OPEN_BRACE}
 \title{Special characters}
 \format{An object of class \code{regex} (inherits from \code{character}) of length 1.}
 \usage{
@@ -94,4 +94,3 @@ grepl(rx, "]")
 \code{\link{WordBoundaries}} for contants to match the start/end of a word.
 }
 \keyword{datasets}
-

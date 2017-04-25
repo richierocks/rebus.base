@@ -34,4 +34,3 @@ try(stringi::stri_detect_regex(x, rx))
 \url{http://www.regular-expressions.info/recurse.html} and
 \url{http://www.rexegg.com/regex-recursion.html}
 }
-

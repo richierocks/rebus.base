@@ -3,8 +3,8 @@
 \docType{data}
 \name{Anchors}
 \alias{Anchors}
-\alias{END}
 \alias{START}
+\alias{END}
 \alias{exactly}
 \title{The start or end of a string.}
 \format{An object of class \code{regex} (inherits from \code{character}) of length 1.}
@@ -53,4 +53,3 @@ stringi::stri_detect_regex(x, rx_exact)
 \code{\link{whole_word}} and \code{\link{modify_mode}}
 }
 \keyword{datasets}
-

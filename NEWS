@@ -1,4 +1,5 @@
-0.0-3 Added GRAPHEME, NEWLINE + their functional equivalents.
+0.0-3 Added as_lower() and as_upper() to control replacement case for Perl regex.
+      Added GRAPHEME, NEWLINE + their functional equivalents.
       dgt(), spc(), etc. have new default of char_class = FALSE.
 0.0-2 Added CLOSE_BRACKET.
       Fixed wrap_in_char_class.

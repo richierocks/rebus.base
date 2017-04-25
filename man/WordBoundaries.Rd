@@ -2,9 +2,9 @@
 % Please edit documentation in R/constants.R, R/misc.R
 \docType{data}
 \name{WordBoundaries}
+\alias{WordBoundaries}
 \alias{BOUNDARY}
 \alias{NOT_BOUNDARY}
-\alias{WordBoundaries}
 \alias{whole_word}
 \title{Word boundaries}
 \format{An object of class \code{regex} (inherits from \code{character}) of length 1.}
@@ -47,4 +47,3 @@ stringi::stri_detect_regex(x, rx_whole_word)
 \code{\link{ALPHA}}, \code{\link{BACKSLASH}}, \code{\link{START}}
 }
 \keyword{datasets}
-

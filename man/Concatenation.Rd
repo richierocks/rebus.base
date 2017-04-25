@@ -2,8 +2,8 @@
 % Please edit documentation in R/concatenation.R
 \name{Concatenation}
 \alias{Concatenation}
-\alias{\%R\%}
 \alias{\%c\%}
+\alias{\%R\%}
 \title{Combine strings together}
 \usage{
 x \%c\% y
@@ -33,4 +33,3 @@ letters \%R\% month.abb
 \seealso{
 \code{\link{regex}}, \code{\link[base]{paste}}
 }
-

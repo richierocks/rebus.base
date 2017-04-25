@@ -24,4 +24,3 @@ This works like \code{paste0}, but the returns value has class
 as.regex(month.abb)
 regex(letters[1:5], "?")
 }
-

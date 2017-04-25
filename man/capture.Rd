@@ -2,9 +2,9 @@
 % Please edit documentation in R/capture.R
 \name{capture}
 \alias{capture}
-\alias{engroup}
 \alias{group}
 \alias{token}
+\alias{engroup}
 \title{Capture a token, or not}
 \usage{
 capture(x)
@@ -52,4 +52,3 @@ stringi::stri_extract_all_regex(
 \seealso{
 \code{\link{or}} for more examples
 }
-

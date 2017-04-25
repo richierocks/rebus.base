@@ -4,31 +4,31 @@
 \alias{ClassGroups}
 \alias{alnum}
 \alias{alpha}
-\alias{any_char}
-\alias{ascii_alnum}
-\alias{ascii_alpha}
-\alias{ascii_digit}
-\alias{ascii_lower}
-\alias{ascii_upper}
 \alias{blank}
-\alias{char_range}
 \alias{cntrl}
-\alias{dgt}
 \alias{digit}
 \alias{graph}
-\alias{grapheme}
-\alias{hex_digit}
 \alias{lower}
-\alias{newline}
-\alias{not_dgt}
-\alias{not_spc}
-\alias{not_wrd}
 \alias{printable}
 \alias{punct}
 \alias{space}
-\alias{spc}
 \alias{upper}
+\alias{hex_digit}
+\alias{any_char}
+\alias{grapheme}
+\alias{newline}
+\alias{dgt}
 \alias{wrd}
+\alias{spc}
+\alias{not_dgt}
+\alias{not_wrd}
+\alias{not_spc}
+\alias{ascii_digit}
+\alias{ascii_lower}
+\alias{ascii_upper}
+\alias{ascii_alpha}
+\alias{ascii_alnum}
+\alias{char_range}
 \title{Character classes}
 \usage{
 alnum(lo, hi, char_class = TRUE)
@@ -199,4 +199,3 @@ stringi::stri_replace_all_regex("foo\\nbar\\r\\nbaz\\rquux", NEWLINE, "\\n")
 \seealso{
 \code{\link[base]{regex}}, \code{\link[rebus.unicode]{Unicode}}
 }
-

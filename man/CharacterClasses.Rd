@@ -2,34 +2,34 @@
 % Please edit documentation in R/constants.R, R/compound-constants.R
 \docType{data}
 \name{CharacterClasses}
-\alias{ALNUM}
+\alias{CharacterClasses}
 \alias{ALPHA}
-\alias{ANY_CHAR}
-\alias{ASCII_ALNUM}
-\alias{ASCII_ALPHA}
-\alias{ASCII_DIGIT}
-\alias{ASCII_LOWER}
-\alias{ASCII_UPPER}
+\alias{ALNUM}
 \alias{BLANK}
 \alias{CNTRL}
-\alias{CharacterClasses}
-\alias{DGT}
 \alias{DIGIT}
 \alias{GRAPH}
-\alias{GRAPHEME}
-\alias{HEX_DIGIT}
 \alias{LOWER}
-\alias{NEWLINE}
-\alias{NOT_DGT}
-\alias{NOT_SPC}
-\alias{NOT_WRD}
 \alias{PRINT}
 \alias{PUNCT}
 \alias{SPACE}
-\alias{SPC}
-\alias{UNMATCHABLE}
 \alias{UPPER}
+\alias{HEX_DIGIT}
+\alias{ANY_CHAR}
+\alias{GRAPHEME}
+\alias{NEWLINE}
+\alias{DGT}
 \alias{WRD}
+\alias{SPC}
+\alias{NOT_DGT}
+\alias{NOT_WRD}
+\alias{NOT_SPC}
+\alias{ASCII_DIGIT}
+\alias{ASCII_LOWER}
+\alias{ASCII_UPPER}
+\alias{ASCII_ALPHA}
+\alias{ASCII_ALNUM}
+\alias{UNMATCHABLE}
 \title{Class Constants}
 \format{An object of class \code{regex} (inherits from \code{character}) of length 1.}
 \usage{
@@ -143,4 +143,3 @@ stringi::stri_detect_regex(x, rx)
 \code{\link{WordBoundaries}} for contants to match the start/end of a word.
 }
 \keyword{datasets}
-

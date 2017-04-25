@@ -30,4 +30,3 @@ escapes every value.
 \examples{
 escape_special("\\\\ ^ $ . | ? * + ( ) { } [ ]")
 }
-

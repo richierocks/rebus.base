@@ -29,4 +29,3 @@ Prints/formats objects of class \code{regex}.
 group(1:5)
 lookahead(1:5)
 }
-

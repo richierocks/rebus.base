@@ -2,8 +2,8 @@
 % Please edit documentation in R/lookaround.R
 \name{lookahead}
 \alias{lookahead}
-\alias{lookbehind}
 \alias{negative_lookahead}
+\alias{lookbehind}
 \alias{negative_lookbehind}
 \title{Lookaround}
 \usage{
@@ -58,4 +58,3 @@ grepl(rx_lookbehind, x2, perl = TRUE)
 \url{http://www.regular-expressions.info/lookaround.html} and
 \url{http://www.rexegg.com/regex-lookarounds.html}
 }
-

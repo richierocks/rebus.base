@@ -26,4 +26,3 @@ tests for objects of class \code{"regex"}.
 x <- as.regex("month.abb")
 is.regex(x)
 }
-
