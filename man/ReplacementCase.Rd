@@ -17,7 +17,8 @@ as_upper(x)
 A character vector representing part or all of a regular expression.
 }
 \description{
-Forces replacement values to be upper or lower case.
+Forces replacement values to be upper or lower case. Only supported by Perl
+regular expressions.
 }
 \examples{
 # Convert to title case using Perl regex

@@ -67,7 +67,8 @@ no_backslash_escaping <- function(x)
 
 #' Force the case of replacement values
 #'
-#' Forces replacement values to be upper or lower case.
+#' Forces replacement values to be upper or lower case. Only supported by Perl
+#' regular expressions.
 #' @param x A character vector.
 #' @return A character vector representing part or all of a regular expression.
 #' @references \url{http://www.regular-expressions.info/replacecase.html}
